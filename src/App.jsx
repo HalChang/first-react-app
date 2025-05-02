@@ -1,0 +1,31 @@
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import "./styles/reset.css";
+import "./styles/index.css";
+
+import Topnav from "./components/Topnav";
+import Main from "./components/Main";
+
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import NotFound from "./pages/NotFound";
+
+createRoot(document.getElementById("root")).render(
+	<StrictMode>
+		<BrowserRouter basename={import.meta.env.BASE_URL}>
+			{/* import.meta.env 是 Vite 內建的環境變數，BASE_URL 會根據你 vite.config.js 裡 base 設定來改變 */}
+			<Topnav />
+			<Main>
+				<Routes>
+					<Route path="/" element={<Home />} />
+					<Route path="/about" element={<About />} />
+					<Route path="/contact" element={<Contact />} />
+					<Route path="*" element={<NotFound />} />
+				</Routes>
+			</Main>
+		</BrowserRouter>
+	</StrictMode>
+);

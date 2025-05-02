@@ -1,0 +1,45 @@
+.notfound {
+	max-width: 500px;
+	margin-inline: auto;
+	padding: 1rem;
+	background: var(--base-bg);
+	color: var(--base-tx);
+	border: 1px solid var(--primary);
+	border-left-width: 1.5rem;
+	border-radius: 0.25rem;
+}
+
+.notfound:hover {
+	background: rgb(255, 253, 253);
+	color: var(--primary);
+}
+
+.notfound h1 {
+	font-size: 1.5rem;
+}
+
+.notfound_icon {
+	margin-right: 1rem;
+	color: var(--primary);
+}
+
+.notfound p {
+	margin-block: 1rem;
+	font-size: 1rem;
+	line-height: 1.8;
+}
+
+.notfound a {
+	display: block;
+	width: fit-content;
+	margin-left: auto;
+	padding: 0.5rem;
+	color: var(--primary);
+	font-size: 1rem;
+	border-radius: 0.25rem;
+}
+
+.notfound a:hover {
+	background: var(--primary);
+	color: var(--light);
+}
