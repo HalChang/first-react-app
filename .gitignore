@@ -22,3 +22,16 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Build output
+build
+
+# dotenv files
+.env
+.env.*.local
+
+# macOS trash
+.Trashes
+
+# Windows thumbnail cache
+Thumbs.db
