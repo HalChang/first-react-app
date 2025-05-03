@@ -15,7 +15,8 @@ import NotFound from "./pages/NotFound";
 
 createRoot(document.getElementById("root")).render(
 	<StrictMode>
-		<BrowserRouter basename={import.meta.env.BASE_URL}>
+		<BrowserRouter>
+			{/*  <BrowserRouter basename={import.meta.env.BASE_URL}> */}
 			{/* import.meta.env 是 Vite 內建的環境變數，BASE_URL 會根據你 vite.config.js 裡 base 設定來改變 */}
 			<Topnav />
 			<Main>
