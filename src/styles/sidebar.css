@@ -5,7 +5,7 @@
 	max-width: 200px;
 	height: calc(100dvh - 80px);
 	margin-top: 1.25rem;
-	z-index: 99;
+	z-index: 999;
 	background: var(--base-bg);
 	color: var(--base-tx);
 	border: 1px solid var(--primary-bd);
@@ -16,7 +16,7 @@
 
 	display: grid;
 	grid-template-columns: 1fr;
-	transition: 300ms ease-in-out;
+	transition: all 300ms ease;
 
 	&::-webkit-scrollbar {
 		width: 8px;
@@ -114,12 +114,14 @@ li.sidebar_list_item:hover {
 @media (max-width: 992px) {
 	.sidebar {
 		position: fixed;
-		top: 60px;
-		width: 64px;
+		top: 4px;
+		width: 100%;
+		max-width: 100%;
 		margin-top: 0;
 		background: transparent;
-		/* color: transparent; */
+		color: transparent;
 		border-color: transparent;
+		pointer-events: none;
 		grid-template-columns: 0fr;
 	}
 
@@ -128,12 +130,25 @@ li.sidebar_list_item:hover {
 		grid-template-columns: 1fr;
 		background: var(--base-bg);
 		color: var(--base-tx);
-		border: 1px solid var(--primary-bd);
+		pointer-events: auto;
 	}
 
 	button.sidebar_toggle_btn {
-		top: -1.75rem;
-		left: 0.75rem;
+		top: 0px;
+		left: 0.25rem;
+		width: 40px;
+		height: 40px;
+	}
+
+	button.sidebar_toggle_btn {
+		pointer-events: auto;
+	}
+
+	button.sidebar_toggle_btn:hover {
+		background: transparent;
+	}
+
+	button.sidebar_toggle_btn:active {
 		background: var(--secondary);
 	}
 }

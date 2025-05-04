@@ -6,7 +6,6 @@
 	padding-right: 64px;
 }
 
-/* 主輪播 */
 .main-swiper {
 	position: relative;
 	width: 100%;
@@ -15,11 +14,11 @@
 	overflow: hidden;
 }
 
-.mySwiper img {
+.swiper-slide img {
 	display: block;
 	height: 100%;
-	height: 100%;
 	object-fit: cover;
+	object-position: center center;
 }
 
 .slide-caption {
@@ -29,7 +28,7 @@
 	max-width: 50%;
 	padding: 1rem;
 	background: rgba(0, 0, 0, 0.5);
-	color: white;
+	color: #fff;
 	border-radius: 0.625rem;
 }
 
@@ -40,7 +39,7 @@
 	top: 50%;
 	transform: translateY(-50%);
 	background: rgba(0, 0, 0, 0.3);
-	color: white;
+	color: #fff;
 	border-radius: 50%;
 	margin-top: 0; /* 清除原本預設的樣式 */
 }
@@ -51,7 +50,6 @@
 	font-weight: bold;
 }
 
-/* 分頁點點樣式 */
 .swiper-pagination-bullets {
 	bottom: 0.25rem !important; /* 讓它顯示在圖片外面下方 */
 }
@@ -60,7 +58,6 @@
 	width: 0.75rem;
 	height: 0.75rem;
 	margin: 0 0.5rem !important;
-	/* background: var(--secondary); */
 	opacity: 0.5;
 }
 
@@ -69,7 +66,6 @@
 	opacity: 1;
 }
 
-/* 縮圖輪播 */
 .thumbs-swiper {
 	margin-top: 0.625rem;
 }
@@ -79,19 +75,18 @@
 	height: 5rem;
 	margin: 0 auto;
 	object-fit: cover;
-	border: 2px solid transparent;
 	border-radius: 0.625rem;
 	cursor: pointer;
 	transition: 300ms ease-in-out;
+	filter: brightness(0.5);
 }
 
-/* 縮圖被選到時的效果 */
 .swiper-slide-thumb-active img {
-	border-color: var(--primary);
+	filter: brightness(1);
 }
 
 .thumbs-swiper img:hover {
-	border-color: var(--secondary);
+	filter: brightness(0.7);
 }
 
 .home_container {
@@ -113,4 +108,54 @@
 	font-size: 1.5rem;
 	font-weight: 700;
 	letter-spacing: 1px;
+}
+
+@media (max-width: 992px) {
+	.home {
+		padding-right: 0px;
+	}
+
+	.main-swiper {
+		height: 200px;
+		border-radius: 0.625rem;
+		overflow: hidden;
+	}
+
+	.slide-caption {
+		bottom: 1rem;
+		left: 1rem;
+		max-width: 100%;
+		padding: 0.5rem;
+		font-size: 0.875rem;
+	}
+
+	.swiper-button-next,
+	.swiper-button-prev {
+		width: 40px;
+		height: 40px;
+	}
+
+	.swiper-button-next::after,
+	.swiper-button-prev::after {
+		font-size: 1rem;
+	}
+
+	.swiper-pagination-bullet {
+		width: 0.625rem;
+		height: 0.625rem;
+		margin: 0 0.5rem !important;
+		opacity: 0.5;
+	}
+
+	.thumbs-swiper {
+		margin-top: 0.25rem;
+	}
+
+	.thumbs-swiper img {
+		width: 100%;
+		height: 40px;
+		border-radius: 0.625rem;
+		cursor: pointer;
+		transition: 300ms ease-in-out;
+	}
 }

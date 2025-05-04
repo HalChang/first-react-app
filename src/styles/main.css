@@ -6,19 +6,13 @@
 .main_container {
 	position: relative;
 	max-width: 1520px;
+	width: 100%;
 	margin-inline: auto;
 	display: flex;
-	flex-direction: column; /* 手機預設直排 */
+	flex-direction: row;
 	border-inline: 1px solid var(--primary-bd);
 	background: var(--base-bg);
 	color: var(--base-tx);
-}
-
-/* 桌機以上變成橫排（例：有 sidebar） */
-@media (min-width: 992px) {
-	.main_container {
-		flex-direction: row;
-	}
 }
 
 .main_content {
@@ -79,7 +73,15 @@
 	font-size: 24px;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 992px) {
+	.main_container {
+		flex-direction: row;
+	}
+
+	.main_content {
+		padding: 0.25rem;
+	}
+
 	.gotop_link_btn {
 		width: 40px;
 		height: 40px;

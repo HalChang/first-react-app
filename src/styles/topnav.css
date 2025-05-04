@@ -58,13 +58,24 @@ a.navbar_item_link {
 }
 
 @media (max-width: 992px) {
+	header.topnav {
+		height: 3rem;
+	}
+
+	.topnav_container > div {
+		padding-inline: 0;
+	}
+
 	.topnav_container > div > nav {
-		padding-left: 1.5rem;
+		padding-left: 2.75rem;
+	}
+
+	ul.navbar {
+		padding-inline: 0;
 	}
 
 	a.navbar_item_link {
-		width: fit-content;
-		padding: 0.75rem;
+		width: 3rem;
 	}
 }
 
@@ -235,7 +246,7 @@ span.usernav_tooltip::before {
 	bottom: 0;
 	left: 0;
 	background: rgba(0, 0, 0, 0.3);
-	z-index: 999;
+	z-index: 9999;
 }
 
 .form {

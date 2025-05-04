@@ -100,8 +100,8 @@ export default function Home() {
 				<div className="">
 					<div className="home_heading">我的主頁</div>
 					<div className="home_content">
-						<p>一些首頁的內容，目前還沒有想到要做什麼</p>
-						<p>之後有甚麼想法都做出來吧！</p>
+						<p>慢慢更新中...</p>
+						<p>找工作中...</p>
 					</div>
 				</div>
 			</div>
