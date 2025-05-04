@@ -3,7 +3,7 @@ header.topnav {
 	top: 0;
 	width: 100%;
 	height: 60px;
-	z-index: 999;
+	z-index: 99;
 }
 
 .topnav_container {
@@ -33,6 +33,8 @@ header.topnav {
 }
 
 ul.navbar {
+	display: flex;
+	flex-wrap: nowrap;
 	height: 100%;
 	padding-inline: 0.5rem;
 }
@@ -53,6 +55,17 @@ a.navbar_item_link {
 	height: 100%;
 	text-align: center;
 	border-bottom: 4px solid transparent;
+}
+
+@media (max-width: 992px) {
+	.topnav_container > div > nav {
+		padding-left: 1.5rem;
+	}
+
+	a.navbar_item_link {
+		width: fit-content;
+		padding: 0.75rem;
+	}
 }
 
 a.navbar_item_link:hover {

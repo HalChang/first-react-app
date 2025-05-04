@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import { useEffect, useState, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleUp } from "@fortawesome/free-solid-svg-icons";
 import "../styles/main.css";
@@ -11,6 +12,26 @@ import Settings from "../pages/Settings";
 import NotFound from "../pages/NotFound";
 
 export default function Main() {
+	const [showGoTop, setShowGoTop] = useState(false);
+	const goTopRef = useRef(null);
+
+	useEffect(() => {
+		const handleScroll = () => {
+			if (window.pageYOffset > 150) {
+				setShowGoTop(true);
+			} else {
+				setShowGoTop(false);
+			}
+		};
+
+		window.addEventListener("scroll", handleScroll);
+		return () => window.removeEventListener("scroll", handleScroll);
+	}, []);
+
+	const scrollToTop = () => {
+		window.scrollTo({ top: 0, behavior: "smooth" });
+	};
+
 	return (
 		<>
 			<main className="main">
@@ -27,10 +48,16 @@ export default function Main() {
 					</div>
 				</div>
 			</main>
-			<div className="gotop_link">
-				<a href="_top" className="gotop_link_btn">
-					<FontAwesomeIcon icon={faAngleUp} className="gotop_link_icon" />
-				</a>
+			<div
+				ref={goTopRef}
+				className={`goTopWrapper${showGoTop ? " show" : ""}`}
+				onClick={scrollToTop}
+			>
+				<div className="gotop_link">
+					<button className="gotop_link_btn">
+						<FontAwesomeIcon icon={faAngleUp} className="gotop_link_icon" />
+					</button>
+				</div>
 			</div>
 		</>
 	);

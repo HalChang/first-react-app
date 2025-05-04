@@ -8,9 +8,17 @@
 	max-width: 1520px;
 	margin-inline: auto;
 	display: flex;
+	flex-direction: column; /* 手機預設直排 */
 	border-inline: 1px solid var(--primary-bd);
 	background: var(--base-bg);
 	color: var(--base-tx);
+}
+
+/* 桌機以上變成橫排（例：有 sidebar） */
+@media (min-width: 992px) {
+	.main_container {
+		flex-direction: row;
+	}
 }
 
 .main_content {
@@ -20,16 +28,27 @@
 	padding: 1.25rem;
 }
 
-.gotop_link {
+.goTopWrapper {
 	position: fixed;
 	bottom: 24px;
-	right: 0;
+	right: 24px;
+	z-index: 999;
+	opacity: 0;
+	transform: translateY(20px) scale(0.95);
+	transition: opacity 300ms ease, transform 300ms ease;
+	pointer-events: none;
+}
+
+.goTopWrapper.show {
+	opacity: 1;
+	transform: translateY(0) scale(1);
+	pointer-events: auto;
+}
+
+.gotop_link {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	width: 100px;
-	z-index: 12;
-	transition: 300ms;
 }
 
 .gotop_link_btn {
@@ -37,22 +56,33 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	width: 65px;
-	height: 65px;
+	width: 60px;
+	height: 60px;
 	padding: 4px;
 	background: var(--base-bg);
 	color: var(--base-tx);
 	border: 1px solid var(--primary-bd);
 	border-radius: 4px;
-	transition: all 300ms;
+	box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.2);
+	transition: transform 300ms ease;
+	cursor: pointer;
 }
 
 .gotop_link_btn:hover {
 	background: var(--primary);
 	color: var(--light);
 	border-color: var(--primary);
+	transform: scale(1.05);
 }
 
 .gotop_link_icon {
 	font-size: 24px;
+}
+
+@media (max-width: 576px) {
+	.gotop_link_btn {
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+	}
 }
