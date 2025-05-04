@@ -17,6 +17,11 @@
 	--selection-tx: rgb(119, 10, 33);
 }
 
+html,
+body {
+	scrollbar-gutter: stable;
+}
+
 body {
 	font-family: Arial, Helvetica, sans-serif;
 	width: 100%;

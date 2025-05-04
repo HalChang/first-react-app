@@ -138,9 +138,29 @@ a.store_card:hover {
 }
 
 @media (max-width: 992px) {
+	.store_item_container {
+		margin-top: 0rem;
+		padding: 0.5rem;
+		border-radius: 0.75rem;
+	}
+
+	.store_item_group {
+		margin-bottom: 1rem;
+	}
+
+	.store_item_group.active > div {
+		margin-top: 0.5rem;
+	}
+
 	.store_item_card {
 		grid-template-columns: repeat(2, 1fr);
 		gap: 0.5rem;
 		padding: 0.5rem;
+	}
+}
+
+@media (max-width: 576px) {
+	.store_item_card {
+		grid-template-columns: repeat(1, 1fr);
 	}
 }
