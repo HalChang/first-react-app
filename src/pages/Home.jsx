@@ -43,7 +43,7 @@ export default function Home() {
 					delay: 5000, // 每 5 秒自動切換
 					disableOnInteraction: false, // 使用者互動後是否停止
 				}}
-				speed={1000} // 切換動畫速度（毫秒）
+				speed={3000} // 切換動畫速度（毫秒）
 				pagination={{
 					clickable: true, // 分頁點點可以點擊
 				}}

@@ -16,7 +16,7 @@ export default function NotificationPanel({ active }) {
 						<div key={noti.id} className="notification_item">
 							<a href="#">
 								<div className="notification_avator">
-									<img src="" alt="" />
+									<img src={undefined} />
 								</div>
 								<div className="notification_content">
 									<p>通知訊息</p>

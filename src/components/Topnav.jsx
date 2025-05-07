@@ -7,7 +7,7 @@ import { useState } from "react";
 import "../styles/topnav.css";
 
 import NotificationPanel from "./NotificationPanel";
-import LoginForm from "./LoginForm";
+import AuthModal from "./AuthModal";
 
 const navItems = [
 	{ label: "首頁", link: "/" },
@@ -18,8 +18,8 @@ const navItems = [
 
 export default function Topnav() {
 	const location = useLocation();
-	const [formActive, setFormActive] = useState(false);
 	const [notiActive, setNotiActive] = useState(false);
+	const [showAuth, setShowAuth] = useState(false);
 
 	const isNavItemActive = (currentPath, itemLink) => {
 		if (itemLink === "/") return currentPath === "/";
@@ -66,7 +66,7 @@ export default function Topnav() {
 							<li className="usernav_item">
 								<button
 									className="usernav_btn"
-									onClick={() => setFormActive((prev) => !prev)}
+									onClick={() => setShowAuth((prev) => !prev)}
 								>
 									<div className="usernav_icon icon_user">
 										<FontAwesomeIcon icon={faUser} />
@@ -78,7 +78,7 @@ export default function Topnav() {
 					</div>
 				</div>
 			</header>
-			{formActive && <LoginForm onClose={() => setFormActive(false)} />}
+			{showAuth && <AuthModal onClose={() => setShowAuth(false)} />}
 		</>
 	);
 }
